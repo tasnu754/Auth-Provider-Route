@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import auth from "../../firebaseConfig";
+import  { AuthContext } from "../ContextElement/ContextElement";
 
+ 
 
 const CustomContext = () => {
-    const useCustomContext = useContext(auth)
+    const useCustomContext = useContext(AuthContext);
     return useCustomContext;
 };
 

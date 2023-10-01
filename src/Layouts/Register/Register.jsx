@@ -1,30 +1,30 @@
 
 // import { useContext } from "react";
-// import auth from "../../../firebaseConfig";
+// import { AuthContext } from "../../ContextElement/ContextElement";
 import CustomContext from "../../CustomContext/CustomContext";
 
 
 const Register = () => {
 
-  const { signin } = CustomContext;
-  // const { signin } = useContext(auth);
+  const { signin } = CustomContext();
+
 
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // const name = e.target.name.value;
+    const name = e.target.name.value;
     const email = e.target.email.value;
-    const pass = e.target.pass.value;
-    // console.log(name , email , pass);
+    const password = e.target.pass.value;
+    console.log(name , email , password);
 
-    signin(email, pass)
+    signin(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
       })
       .catch((error) => {
-         console.log(error.message);
-    })
+        console.log(error.message);
+      });
   }
 
 

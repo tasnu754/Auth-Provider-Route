@@ -3,16 +3,18 @@ import PropTypes from "prop-types";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebaseConfig";
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 
 const ContextElement = ({ children }) => {
 
-    const signin = (email , password) => {
+    const signin = (email , password) =>{
       return createUserWithEmailAndPassword(auth, email, password);
-    }
+  }
+ 
 
     const content = {
-        signin
+      signin, 
+  
     }
   return (
     <div>
