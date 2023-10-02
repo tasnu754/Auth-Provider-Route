@@ -27,18 +27,22 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/signIn"
-            className="btn text-xl font-bold bg-purple-900 text-purple-200 hover:bg-purple-700"
+            className="btn text-xl font-bold mr-4  bg-purple-900 text-purple-200 hover:bg-purple-700"
           >
             SignIn
           </NavLink>
         </li>
-        {/* <li>
-          <NavLink to="/signOut" className="text-xl font-bold">
-            SignOut
-          </NavLink>
-        </li> */}
+        {user && (
+          <li>
+            <NavLink
+              to="/products"
+              className="btn text-xl font-bold mr-4 bg-purple-900 text-purple-200 hover:bg-purple-700"
+            >
+              Products
+            </NavLink>
+          </li>
+        )}
       </>
-     
     );
     return (
       <div className="bg-purple-200">

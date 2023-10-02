@@ -11,6 +11,8 @@ import Register from './Layouts/Register/Register';
 import Login from './Layouts/Login/Login';
 import Logout from './Layouts/Logout/Logout';
 import ContextElement from './ContextElement/ContextElement';
+import Products from './Components/Products/Products';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "/signOut",
         element: <Logout></Logout>,
+      },
+      {
+        path: "/products",
+        element: (
+          <PrivateRoute>
+            <Products></Products>
+          </PrivateRoute>
+        ),
       },
     ],
   },
