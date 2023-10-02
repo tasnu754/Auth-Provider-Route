@@ -83,16 +83,11 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{buttons}</ul>
         </div>
         <div className="navbar-end mr-10">
-          {user && <p className=" text-lg font-semibold mr-4">{user.email}</p>}
-          {!user ? (
-            <button
-              onClick={handleLogOut}
-              className="btn bg-purple-950 text-purple-200 text-xl font-bold hover:text-black"
-            >
-              SignOut
-            </button>
-          ) : (
-            <div className="rounded-full w-8 h-8 overflow-hidden ">
+          {user && (
+            <p className=" text-lg font-semibold mr-4">{user.displayName}</p>
+          )}
+          {user && (
+            <div className="rounded-full w-8 h-8 overflow-hidden mr-10 ">
               <img
                 src="pic.png"
                 alt=""
@@ -100,6 +95,12 @@ const Navbar = () => {
               />
             </div>
           )}
+          <button
+            onClick={handleLogOut}
+            className="btn bg-purple-950 text-purple-200 text-xl font-bold hover:text-black"
+          >
+            SignOut
+          </button>
         </div>
       </div>
     </div>
