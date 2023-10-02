@@ -7,18 +7,18 @@ import CustomContext from "../../CustomContext/CustomContext";
 
 const Register = () => {
 
-  const { signin } = CustomContext();
+  const { register } = CustomContext();
 
 
 
   const handleRegister = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
+    // const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.pass.value;
-    console.log(name , email , password);
+    // console.log(name , email , password);
 
-    signin(email, password)
+    register(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);

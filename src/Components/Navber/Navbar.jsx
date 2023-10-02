@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
+import CustomContext from "../../CustomContext/CustomContext";
 
 const Navbar = () => {
+  const { user } = CustomContext();
+  console.log(user?.email);
     const buttons = (
       <>
         <li>
@@ -70,7 +73,13 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{buttons}</ul>
           </div>
           <div className="navbar-end mr-10">
-            <NavLink to="/signOut" className="btn bg-purple-950 text-purple-200 text-xl font-bold">
+            {
+              user && <p className=" text-lg font-semibold mr-4">{ user.email}</p>
+            }
+            <NavLink
+              to="/signOut"
+              className="btn bg-purple-950 text-purple-200 text-xl font-bold"
+            >
               SignOut
             </NavLink>
           </div>
