@@ -2,9 +2,9 @@
 
 const Products = () => {
     return (
-        <div>
-            <h2>Products are available</h2>
-        </div>
+      <div className="bg-purple-200">
+        <h2>Products are available</h2>
+      </div>
     );
 };
 

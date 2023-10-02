@@ -30,7 +30,7 @@ const ContextElement = ({ children }) => {
   const update = (name,photo) => {
     updateProfile(auth.currentUser, {
       displayName: name,
-      photoURL: photo,
+      photoURL: photo || "/pic.png",
     });
   }
 
