@@ -76,10 +76,11 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{buttons}</ul>
           </div>
           <div className="navbar-end mr-10">
-            {
-              user && <p className=" text-lg font-semibold mr-4">{ user.email}</p>
-            }
-            <button onClick={handleLogOut}
+            {user && (
+              <p className=" text-lg font-semibold mr-4">{user.displayName}</p>
+            )}
+            <button
+              onClick={handleLogOut}
               className="btn bg-purple-950 text-purple-200 text-xl font-bold hover:text-black"
             >
               SignOut

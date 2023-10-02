@@ -7,13 +7,13 @@ import CustomContext from "../../CustomContext/CustomContext";
 
 const Register = () => {
 
-  const { register } = CustomContext();
+  const { register, update } = CustomContext();
 
 
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // const name = e.target.name.value;
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.pass.value;
     // console.log(name , email , password);
@@ -21,6 +21,13 @@ const Register = () => {
     register(email, password)
       .then((result) => {
         const user = result.user;
+        update(name, user.photoURL)
+          .then(() => {
+             console.log("Updated");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          })
         console.log(user);
         e.target.reset();
       })

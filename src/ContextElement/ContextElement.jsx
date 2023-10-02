@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-   signOut ,
+  signOut,
   onAuthStateChanged,
+  updateProfile,
 } from "firebase/auth";
 import auth from "../../firebaseConfig";
 
@@ -25,6 +26,14 @@ const ContextElement = ({ children }) => {
     return signOut(auth);
   }
 
+
+  const update = (name,photo) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  }
+
   useEffect(() => {
 
     onAuthStateChanged(auth, (currentUser) => {
@@ -38,6 +47,7 @@ const ContextElement = ({ children }) => {
     register,
     signin,
     logOut,
+    update,
   };
   return (
     <div>
