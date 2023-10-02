@@ -4,10 +4,23 @@ import CustomContext from "../../CustomContext/CustomContext";
 
 const Login = () => {
    
-  const { sign } = CustomContext();
+  const { signin } = CustomContext();
 
-  const handleSignin = () => {
+  const handleSignin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const pass = e.target.password.value;
+    // console.log(email, pass);
     
+    signin(email, pass)
+      .then((result) => {
+        const signUser = result.user;
+        console.log(signUser);
+        e.target.reset();
+    })
+      .catch((error) => {
+         console.log(error.message);
+    })
   }
   
     return (
@@ -25,7 +38,8 @@ const Login = () => {
                       <span className="label-text">Email</span>
                     </label>
                     <input
-                      type="text"
+                      name="email"
+                      type="email"
                       placeholder="email"
                       className="input input-bordered text-base"
                     />
@@ -35,7 +49,8 @@ const Login = () => {
                       <span className="label-text">Password</span>
                     </label>
                     <input
-                      type="text"
+                      name="password"
+                      type="password"
                       placeholder="password"
                       className="input input-bordered text-base"
                     />

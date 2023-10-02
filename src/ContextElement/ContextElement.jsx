@@ -17,7 +17,7 @@ const ContextElement = ({ children }) => {
   };
 
   const signin = (email , password) => {
-    signInWithEmailAndPassword(auth , email , password)
+    return signInWithEmailAndPassword(auth, email, password);
   }
 
   useEffect(() => {

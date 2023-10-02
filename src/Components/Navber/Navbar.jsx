@@ -3,7 +3,6 @@ import CustomContext from "../../CustomContext/CustomContext";
 
 const Navbar = () => {
   const { user } = CustomContext();
-  console.log(user?.email);
     const buttons = (
       <>
         <li>
@@ -76,12 +75,11 @@ const Navbar = () => {
             {
               user && <p className=" text-lg font-semibold mr-4">{ user.email}</p>
             }
-            <NavLink
-              to="/signOut"
-              className="btn bg-purple-950 text-purple-200 text-xl font-bold"
+            <button
+              className="btn bg-purple-950 text-purple-200 text-xl font-bold hover:text-black"
             >
               SignOut
-            </NavLink>
+            </button>
           </div>
         </div>
       </div>
