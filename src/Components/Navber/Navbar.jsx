@@ -2,7 +2,10 @@ import { NavLink } from "react-router-dom";
 import CustomContext from "../../CustomContext/CustomContext";
 
 const Navbar = () => {
-  const { user } = CustomContext();
+  const { user, logOut } = CustomContext();
+   const handleLogOut = () => {
+     logOut();
+   };
     const buttons = (
       <>
         <li>
@@ -35,6 +38,7 @@ const Navbar = () => {
           </NavLink>
         </li> */}
       </>
+     
     );
     return (
       <div className="bg-purple-200">
@@ -75,7 +79,7 @@ const Navbar = () => {
             {
               user && <p className=" text-lg font-semibold mr-4">{ user.email}</p>
             }
-            <button
+            <button onClick={handleLogOut}
               className="btn bg-purple-950 text-purple-200 text-xl font-bold hover:text-black"
             >
               SignOut

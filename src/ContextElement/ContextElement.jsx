@@ -2,7 +2,8 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword ,
+  signInWithEmailAndPassword,
+   signOut ,
   onAuthStateChanged,
 } from "firebase/auth";
 import auth from "../../firebaseConfig";
@@ -20,6 +21,10 @@ const ContextElement = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   }
 
+  const logOut = () => {
+    return signOut(auth);
+  }
+
   useEffect(() => {
 
     onAuthStateChanged(auth, (currentUser) => {
@@ -32,6 +37,7 @@ const ContextElement = ({ children }) => {
     user,
     register,
     signin,
+    logOut,
   };
   return (
     <div>
