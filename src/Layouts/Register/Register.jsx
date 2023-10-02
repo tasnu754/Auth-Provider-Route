@@ -1,6 +1,7 @@
 
 // import { useContext } from "react";
 // import { AuthContext } from "../../ContextElement/ContextElement";
+import { NavLink } from "react-router-dom";
 import CustomContext from "../../CustomContext/CustomContext";
 
 
@@ -32,10 +33,12 @@ const Register = () => {
 
   return (
     <div>
-      <div className="hero   min-h-screen bg-base-200">
+      <div className="hero   min-h-screen bg-purple-200">
         <div className="hero-content w-full flex-col ">
           <div className="text-center ">
-            <h1 className="text-5xl font-bold mb-10">Register now!</h1>
+            <h1 className="text-5xl font-bold mb-10 text-purple-900">
+              Register now!
+            </h1>
           </div>
           <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl bg-base-100">
             <div className="card-body ">
@@ -73,13 +76,14 @@ const Register = () => {
                     className="input input-bordered"
                   />
                   <label className="label">
-                    <a href="#" className="label-text-alt link link-hover">
-                      Forgot password?
-                    </a>
+                    <p>
+                      Already have account? Please 
+                      <NavLink to="/signIn" className="text-purple-700 underline" >  SignIn</NavLink>
+                    </p>
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">
+                  <button className="btn bg-purple-900 text-purple-200 text-lg hover:text-black hover:bg-purple-500">
                     Register
                   </button>
                 </div>

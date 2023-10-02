@@ -4,30 +4,39 @@ const Navbar = () => {
     const buttons = (
       <>
         <li>
-          <NavLink to="/" className="text-xl font-bold">
+          <NavLink
+            to="/"
+            className="btn text-xl font-bold mr-4 bg-purple-900 text-purple-200 hover:bg-purple-700"
+          >
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/register" className="text-xl font-bold">
+          <NavLink
+            to="/register"
+            className="btn text-xl font-bold mr-4 bg-purple-900 text-purple-200 hover:bg-purple-700"
+          >
             Register
           </NavLink>
         </li>
         <li>
-          <NavLink to="/signIn" className="text-xl font-bold">
+          <NavLink
+            to="/signIn"
+            className="btn text-xl font-bold bg-purple-900 text-purple-200 hover:bg-purple-700"
+          >
             SignIn
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="/signOut" className="text-xl font-bold">
             SignOut
           </NavLink>
-        </li>
+        </li> */}
       </>
     );
     return (
-      <div>
-        <div className="navbar bg-base-100">
+      <div className="bg-purple-200">
+        <div className="navbar ">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -53,15 +62,17 @@ const Navbar = () => {
                 {buttons}
               </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl">
+            <a className="ml-10 font-extrabold normal-case text-2xl text-purple-950">
               Instyle-Boutique
             </a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{buttons}</ul>
           </div>
-          <div className="navbar-end">
-            <a className="btn">Button</a>
+          <div className="navbar-end mr-10">
+            <NavLink to="/signOut" className="btn bg-purple-950 text-purple-200 text-xl font-bold">
+              SignOut
+            </NavLink>
           </div>
         </div>
       </div>

@@ -2,9 +2,9 @@
 
 const Home = () => {
     return (
-      <div className="  h-screen  flex justify-center items-center">
+      <div className="  h-screen text-purple-900 flex justify-center items-center">
         <div>
-          <h1 className="text-6xl font-extrabold text-center my-6">
+          <h1 className="text-6xl  font-extrabold text-center my-6">
             Instyle-Boutiques
           </h1>
           <h2 className="text-4xl font-extrabold">
